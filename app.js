@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = 3000;
-const postRouter = require("./router/postRouter");
+import postRouter from "./router/postRouter.js"
 
 // middlewares
 app.use(express.static('public'));
