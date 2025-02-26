@@ -1,4 +1,4 @@
-const posts = require('../data/posts');
+const posts = require('../data/posts.js');
 
 function index(req, res) {
     res.json(posts);
@@ -94,4 +94,4 @@ function destroy(req, res) {
 };
 
 // esportiamo tutto
-module.exports = { index, show, store, update, patch, destroy };
+module.exports = { index, show, store, update, modify, destroy };
