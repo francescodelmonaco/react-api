@@ -1,6 +1,6 @@
-const express = require('express');
+import { express } from 'express';
 const router = express.Router();
-const postController = require("../controllers/postController");
+import { postController } from "../controllers/postController.js";
 
 // index
 router.get('/', postController.index);
@@ -20,4 +20,4 @@ router.patch('/:id', postController.modify);
 // destroy
 router.delete('/:id', postController.destroy);
 
-module.exports = router;
+export default router;
