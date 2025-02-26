@@ -12,7 +12,7 @@ app.use(express.json());
 
 // middleware per il CORS
 app.use(cors({
-    origin: "http://localhost:5173/"
+    origin: "http://localhost:5173"
 }));
 
 app.post("/", (req, res) => {

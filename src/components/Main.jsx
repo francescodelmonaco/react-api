@@ -17,18 +17,20 @@ const Main = () => {
 
     return (
         <main>
-            <div>
+            <div className="margin-60 card-flex">
                 {
                     posts.map((post) => {
-                        <div>
-                            <figure>
-                                <img src={post.image} alt={post.title} />
-                            </figure>
+                        return (
+                            <div key={post.id} className="card">
+                                <figure>
+                                    <img src={post.image} alt={post.title} />
+                                </figure>
 
-                            <h3>{post.title}</h3>
+                                <h3>{post.title}</h3>
 
-                            <p>{post.content}</p>
-                        </div>
+                                <p>{post.content}</p>
+                            </div>
+                        )
                     })
                 }
             </div>
