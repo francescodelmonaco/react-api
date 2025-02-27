@@ -17,7 +17,44 @@ const Main = () => {
 
     return (
         <main>
-            <div className="margin-60 card-flex">
+            <table className="margin-60">
+                {/* tabel header */}
+                <tr>
+                    <th>
+                        <h3>Title</h3>
+                    </th>
+                    <th>
+                        <h3>Image</h3>
+                    </th>
+                    <th>
+                        <h3>Description</h3>
+                    </th>
+                </tr>
+
+                {/* table data rows */}
+                {
+                    posts.map((post) => {
+                        return (
+                            <tr key={post.id}>
+                                <td>
+                                    <span>{post.title}</span>
+                                </td>
+                                <td>
+                                    <figure>
+                                        <img src={post.image} alt={post.title} />
+                                    </figure>
+                                </td>
+                                <td>
+                                    <p>{post.content}</p>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
+            </table>
+
+            {/* cards */}
+            {/* <div className="margin-50 card-flex">
                 {
                     posts.map((post) => {
                         return (
@@ -33,7 +70,7 @@ const Main = () => {
                         )
                     })
                 }
-            </div>
+            </div> */}
         </main>
     )
 };
