@@ -16,6 +16,7 @@ function store(req, res) {
     const newPost = {
         id: newId,
         title: req.body.title,
+        content: req.body.content,
         image: req.body.image,
         tags: req.body.tags
     };

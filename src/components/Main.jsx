@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
+const apiUrl = import.meta.env.VITE_BASE_API_URL;
+
 const Main = () => {
     // imposto arry vuoto
     const [posts, setPosts] = useState([]);
 
     // imposto chiamata api
     const fetchPosts = () => {
-        fetch("http://localhost:3000/posts")
+        fetch(apiUrl)
             .then((res) => res.json())
             .then(setPosts)
 
@@ -15,8 +17,7 @@ const Main = () => {
 
     useEffect(fetchPosts, []);
 
-
-    // funzione per eliminare articolo nella lista
+    // funzione per eliminare post nella lista
     const removePost = (post) => {
         const arrayClone = posts.filter((_, index) => index !== post);
         return setPosts(arrayClone);
@@ -84,6 +85,41 @@ const Main = () => {
                     })
                 }
             </div> */}
+            {/* form */}
+
+            <div className="margin-60 form-section">
+                <h2>-- Form per l'inserimento di un nuovo post --</h2>
+
+                <form>
+                    <label htmlFor="">
+                        <strong>Title</strong>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Inserisci il titolo del post"
+                    />
+
+                    <label htmlFor="">
+                        <strong>Image</strong>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Inserisci il link all'immagine del post"
+                    />
+
+                    <label htmlFor="">
+                        <strong>Description</strong>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Inserisci la descrizione del post"
+                    />
+
+                    <button type="submit" className="btn-submit">
+                        <strong>Invia</strong>
+                    </button>
+                </form>
+            </div>
         </main>
     )
 };
