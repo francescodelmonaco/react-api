@@ -53,6 +53,15 @@ td {
   padding: 0.5rem;
 }
 
+button {
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
 /* card */
 h3 {
   padding: 1rem 0;

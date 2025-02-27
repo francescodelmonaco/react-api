@@ -15,6 +15,13 @@ const Main = () => {
 
     useEffect(fetchPosts, []);
 
+
+    // funzione per eliminare articolo nella lista
+    const removePost = (post) => {
+        const arrayClone = posts.filter((_, index) => index !== post);
+        return setPosts(arrayClone);
+    };
+
     return (
         <main>
             <table className="margin-60">
@@ -29,11 +36,12 @@ const Main = () => {
                     <th>
                         <h3>Description</h3>
                     </th>
+                    <th></th>
                 </tr>
 
                 {/* table data rows */}
                 {
-                    posts.map((post) => {
+                    posts.map((post, index) => {
                         return (
                             <tr key={post.id}>
                                 <td>
@@ -46,6 +54,11 @@ const Main = () => {
                                 </td>
                                 <td>
                                     <p>{post.content}</p>
+                                </td>
+                                <td>
+                                    <button onClick={() => removePost(index)}>
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
                         )
